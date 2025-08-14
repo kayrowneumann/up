@@ -1,0 +1,402 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <script src="js/AGCSCdsPnj2N.js" data-utmify-prevent-subids="" data-utmify-fast-start="" async="" defer=""></script>
+<script>
+  window.pixelId = "688d7f25a85c39faa3244015";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "spwsrodj2r");
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxa de Liberação</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#EF4444',
+            secondary: '#10B981',
+            dark: '#1F2937',
+            light: '#F9FAFB',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-slow': 'bounce 2s infinite',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    }
+    
+    .progress-bar {
+      height: 6px;
+      background-color: #E5E7EB;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background-color: #EF4444;
+      border-radius: 3px;
+      transition: width 0.5s ease;
+    }
+    
+    .checkmark {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: block;
+      stroke-width: 2;
+      stroke: #fff;
+      stroke-miterlimit: 10;
+      margin: 0 auto;
+      box-shadow: inset 0px 0px 0px #10B981;
+      animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    }
+    
+    .checkmark__check {
+      transform-origin: 50% 50%;
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48;
+      animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    }
+    
+    @keyframes stroke {
+      100% { stroke-dashoffset: 0; }
+    }
+    
+    @keyframes scale {
+      0%, 100% { transform: none; }
+      50% { transform: scale3d(1.1, 1.1, 1); }
+    }
+    
+    @keyframes fill {
+      100% { box-shadow: inset 0px 0px 0px 30px #10B981; }
+    }
+    
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .countdown {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body class="bg-light min-h-screen w-full">
+  <!-- Main Container -->
+  <div class="w-full h-full px-4 pt-6">
+    <!-- Progress Bar -->
+    <div class="progress-bar mb-6">
+      <div id="progress" class="progress-fill" style="width: 0%"></div>
+    </div>
+    
+    <!-- Upsell Container -->
+    <div id="upsell-container" class="bg-white w-full h-full overflow-hidden">
+      <!-- Step 1 - Processing -->
+      <div id="step-1" class="step p-6 md:p-8">
+        <div class="text-center mb-6">
+          <div class="w-full flex justify-center mb-4">
+  <img src="images/drogasil-logo.png" alt="Logo Drogasil" class="w-[240px] max-w-full h-auto transition-all duration-300">
+</div>
+
+          <h2 class="text-2xl font-bold text-dark mb-2">Processando seu pedido...</h2>
+          <p class="text-gray-500">Estamos preparando tudo para você</p>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="flex items-center p-3 bg-gray-50 rounded-lg hidden">
+            <div class="animate-spin h-6 w-6 border-2 border-gray-300 border-t-primary rounded-full mr-4"></div>
+            <div>
+              <p class="font-medium text-gray-800">Nota Fiscal: Regularizada</p>
+              <p class="text-xs text-gray-500">Pagamento identificado</p>
+            </div>
+          </div>
+          
+          <div class="flex items-center p-3 bg-gray-50 rounded-lg hidden">
+            <div class="animate-spin h-6 w-6 border-2 border-gray-300 border-t-primary rounded-full mr-4"></div>
+            <div>
+              <p class="font-medium text-gray-800">Separando seu pedido</p>
+              <p class="text-xs text-gray-500">Preparando para envio</p>
+            </div>
+          </div>
+          
+          <div class="flex items-center p-3 bg-gray-50 rounded-lg hidden">
+            <div class="animate-spin h-6 w-6 border-2 border-gray-300 border-t-primary rounded-full mr-4"></div>
+            <div>
+              <p class="font-medium text-gray-800">Procurando sua receita médica</p>
+              <p class="text-xs text-gray-500">Obrigatório</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Step 2 - Issue Found -->
+      <div id="step-2" class="step hidden p-6 md:p-8">
+        <div class="text-center">
+          <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6 floating">
+            <i class="fas fa-exclamation-triangle text-primary text-3xl animate-pulse-slow"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-dark mb-2">Receita médica pendente</h2>
+          <p class="text-gray-600 mb-6">Não encontramos uma receita associada ao seu CPF, conforme exigência da ANVISA.</p>
+          
+          <div class="bg-red-50 border border-red-100 rounded-lg p-4 mb-6">
+            <p class="text-sm text-gray-700">Para liberar o envio do medicamento sem receita médica, é necessário pagar uma taxa administrativa.
+O não pagamento resultará na perda do benefício e do medicamento, sem possibilidade de reembolso, conforme diretrizes do programa.</p>
+          </div>
+          
+          <button id="calc-btn" class="w-full bg-primary hover:bg-red-600 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 flex items-center justify-center">
+            <span>Ver taxa agora</span>
+            <i class="fas fa-arrow-right ml-2"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Step 3 - Calculating -->
+      <div id="step-3" class="step hidden p-6 md:p-8">
+        <div class="text-center">
+          <div class="animate-spin h-16 w-16 border-4 border-gray-200 border-t-primary rounded-full mx-auto mb-6"></div>
+          <h2 class="text-2xl font-bold text-dark mb-2">Calculando taxa...</h2>
+          <p class="text-gray-500">Isso pode levar alguns segundos</p>
+          
+          <div class="mt-8 bg-gray-50 rounded-lg p-4 inline-block">
+            <p class="text-sm font-medium text-gray-700">Tempo estimado: <span id="countdown" class="countdown font-bold">10</span>s</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Step 4 - Offer -->
+      <div id="step-4" class="step hidden p-6 md:p-8">
+        <div class="text-center mb-6">
+          <div class="w-full flex justify-center mb-6">
+  <img src="images/drogasil-logo.png" alt="Logo da Campanha" class="w-[160px] max-w-full h-auto transition-all duration-300">
+</div>
+
+          <h2 class="text-2xl font-bold text-dark mb-2">Taxa de Dispensa Médica</h2>
+          <p class="text-gray-500"></p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-5 mb-6 text-center border border-gray-200">
+          <div class="flex justify-center items-baseline mb-2">
+
+            <span class="text-3xl font-bold text-red-600">R$39,90</span>
+          </div>
+          <p class="text-sm text-gray-600"><span class="font-bold text-primary">Pagamento obrigatório</span></p>
+        </div>
+        
+        <div class="bg-red-50 border border-red-100 rounded-lg p-4 mb-6">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 pt-1">
+              <i class="fas fa-bolt text-red-500"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-sm text-gray-700">Caso o pagamento não seja realizado, o não aproveitamento do benefício será caracterizado como desperdício de recurso destinado a fins sociais, o que poderá resultar em cobrança judicial da taxa e MULTA por descumprimento da legislação vigente no VALOR de R$722</p>
+            </div>
+          </div>
+        </div>
+        
+        <a href="https://pay.segurocomprabr.online/KV603kokRKd3w8y" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+  Pagar taxa de R$39,90
+</a>
+
+<br>
+
+          <a href="https://pay.segurocomprabr.online/KV603kokRKd3w8y" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+  Desistir do programa e pagar multa de R$722,00
+</a>
+
+        
+        <div class="mt-6 pt-4 border-t border-gray-100">
+          <div class="flex items-center justify-center">
+            <i class="fas fa-lock text-gray-400 mr-2"></i>
+            <p class="text-xs text-gray-400">Pagamento seguro • Oferta válida por <span id="offer-timer" class="font-bold">05:00</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Texto flutuante com spinner de pendência -->
+<div id="pending-status" class="hidden mt-4 flex items-center justify-center text-sm text-red-600 gap-2 animate-pulse">
+  <svg class="animate-spin h-4 w-4 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+  </svg>
+  Pendência encontrada...
+</div>
+
+    <!-- Footer -->
+    <div class="mt-6 text-center">
+      <p class="text-xs text-gray-400">© 2023 Raia Drogasil SA | Todos os direitos reservados.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const steps = document.querySelectorAll('.step');
+      const progressBar = document.getElementById('progress');
+      let currentStep = 0;
+      
+      // Update progress bar
+      function updateProgress(percent) {
+        progressBar.style.width = percent + '%';
+      }
+      
+      // Show specific step
+      function showStep(stepIndex) {
+        steps.forEach((step, index) => {
+          step.classList.toggle('hidden', index !== stepIndex);
+        });
+        currentStep = stepIndex;
+        
+        // Update progress based on step
+        const progressPercent = [25, 50, 75, 100][stepIndex];
+        updateProgress(progressPercent);
+      }
+      
+      // Simula processamento com ícones
+setTimeout(() => {
+  showStep(0);
+
+  // Etapa 1: Conferindo estoque
+  const div1 = document.querySelectorAll('#step-1 .space-y-4 > div')[0];
+  div1.classList.remove('hidden');
+
+  const icon1 = div1.querySelector('div');
+  icon1.className = 'animate-spin h-6 w-6 border-2 border-gray-300 border-t-primary rounded-full mr-4';
+
+  setTimeout(() => {
+    icon1.className = '';
+    icon1.outerHTML = '<i class="fas fa-check-circle text-green-500 text-xl mr-4"></i>';
+  }, 3000);
+
+  // Etapa 2: Separando pedido
+  setTimeout(() => {
+    const div2 = document.querySelectorAll('#step-1 .space-y-4 > div')[1];
+    div2.classList.remove('hidden');
+
+    const icon2 = div2.querySelector('div');
+    icon2.className = 'animate-spin h-6 w-6 border-2 border-gray-300 border-t-primary rounded-full mr-4';
+
+    setTimeout(() => {
+      icon2.className = '';
+      icon2.outerHTML = '<i class="fas fa-check-circle text-green-500 text-xl mr-4"></i>';
+    }, 3000);
+  }, 3000);
+
+  // Etapa 3: Calculando taxa
+  setTimeout(() => {
+    const div3 = document.querySelectorAll('#step-1 .space-y-4 > div')[2];
+    div3.classList.remove('hidden');
+
+    const icon3 = div3.querySelector('div');
+    icon3.className = 'animate-spin h-6 w-6 border-2 border-gray-300 border-t-primary rounded-full mr-4';
+
+    setTimeout(() => {
+      icon3.className = '';
+      icon3.outerHTML = '<i class="fas fa-times-circle text-red-500 text-xl mr-4"></i>';
+    }, 3000);
+  }, 6000);
+
+// Mostrar texto flutuante assim que o X vermelho aparece
+setTimeout(() => {
+  const pendenteStatus = document.getElementById('pending-status');
+  pendenteStatus.classList.remove('hidden');
+}, 9000); // Logo após o X vermelho aparecer (6s de execução + 3s para ícone de X)
+
+// Avança para o Step 2 após 13s (ou seja, 4s depois do texto aparecer)
+setTimeout(() => {
+  const pendenteStatus = document.getElementById('pending-status');
+  pendenteStatus.classList.add('hidden'); // Esconde antes de avançar
+  showStep(1);
+}, 13000);
+
+
+
+}, 300);
+
+
+
+
+      
+      // Handle calculate button click
+      document.getElementById('calc-btn').addEventListener('click', () => {
+        showStep(2);
+        
+        // Start countdown
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdown');
+        const countdownInterval = setInterval(() => {
+          countdown--;
+          countdownElement.textContent = countdown;
+          
+          if (countdown <= 0) {
+            clearInterval(countdownInterval);
+          }
+        }, 1000);
+        
+        setTimeout(() => {
+          showStep(3);
+          
+          // Start offer timer
+          let minutes = 4;
+          let seconds = 59;
+          const offerTimer = document.getElementById('offer-timer');
+          
+          const offerInterval = setInterval(() => {
+            seconds--;
+            if (seconds < 0) {
+              minutes--;
+              seconds = 59;
+            }
+            
+            offerTimer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (minutes <= 0 && seconds <= 0) {
+              clearInterval(offerInterval);
+            }
+          }, 1000);
+        }, 5000);
+      });
+      
+      // Initial progress animation
+      setTimeout(() => {
+        updateProgress(25);
+      }, 500);
+    });
+  </script>
+
+</body></html>
